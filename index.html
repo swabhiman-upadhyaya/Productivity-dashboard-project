@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <!-- <nav></nav> -->
+
+        <section class="allElems">
+            <div class="toDo elem" id="0">
+                <img src="./images/toDo list.jpg" alt="">
+                <p>To-Do List</p>
+            </div>
+
+            <div class="dailyPlan elem" id="1">
+                <img src="./images/dailyPlanner.jpg" alt="">
+                <p>Daily Planner</p>
+            </div>
+
+            <div class="motivation elem" id="2">
+                <img src="./images/motivation.jpg" alt="">
+                <p>Motivation</p>
+            </div>
+
+            <div class="timer elem" id="3">
+                <img src="./images/timer.jpg" alt="">
+                <p>Pomodoro Timer</p>
+            </div>
+
+            <div class="dailyGoals elem" id="4">
+                <img src="./images/Productivity.jpg" alt="">
+                <p>Daily Goals</p>
+            </div>
+        </section>
+
+        <div class="fullElem toDo-full-Page">
+            <h1>Your Personalised task List</h1>
+            <button class="backBtn" id="0">Close</button>
+
+            <div class="todo-container">
+                <div class="AddTask">
+                    <form>
+                        <h3>Add Task</h3>
+                        <input type="text" id="taskInput" placeholder="Enter your task here">
+                        <textarea placeholder="Enter details" name="" id="" cols="30" rows="10"></textarea>
+                        <button type="submit" id="addTaskBtn">Add Task</button>
+                    </form>
+                </div>
+
+                <div class="allTask">
+                    <h3>Your Task Lists</h3>
+                    
+                    <div class="eachTask">
+                        <h3>Your First Task</h3>
+                        <button>Mark as Complete</button>
+                    </div>
+                    
+                    <div class="eachTask">
+                        <h3>Your First Task</h3>
+                        <button>Mark as Complete</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="fullElem dailyPlanner-full-Page">
+            <h1>Daily Planner</h1>
+            <button class="backBtn" id="1">Close</button>
+        </div>
+
+        <div class="fullElem motivation-full-Page">
+            <h1>Motivational Quote</h1>
+            <button class="backBtn" id="2">Close</button>
+        </div>
+
+        <div class="fullElem pomodoro-full-Page">
+            <h1>Pomodoro Timer</h1>
+            <button class="backBtn" id="3">Close</button>
+        </div>
+
+        <div class="fullElem dailyGoals-full-Page">
+            <h1>Daily Goals</h1>
+            <button class="backBtn" id="4">Close</button>
+        </div>
+        
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

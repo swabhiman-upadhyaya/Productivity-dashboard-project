@@ -1,0 +1,28 @@
+Primary
+Use for structure
+Navbar
+Footer
+Main headings
+Sidebars
+Strong emphasis text
+
+Secondary
+Use for actions
+Buttons (CTA)
+Links
+Active states
+Icons that need attention
+
+Tertiary-1
+Use for surfaces
+Cards
+Sections
+Forms
+Modals
+Table rows
+
+Tertiary-2
+Use for background
+Page background
+Light sections
+Readability spacing areas
