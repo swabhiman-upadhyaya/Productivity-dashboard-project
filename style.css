@@ -104,8 +104,8 @@ nav {
 
 .fullElem .backBtn {
     position: absolute;
-    right: 2rem;
-    top: 1.5rem;
+    right: 1.8rem;
+    top: 2.5rem;
     padding: 0.4rem 0.8rem;
     font-size: 1.1rem;
     border: none;
@@ -195,6 +195,25 @@ nav {
     color: var(--neutral);
 }
 
+.todo-container .mark-imp {
+    background-color: var(--tertiary2);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 0.3rem;
+    border: 2px solid var(--secondary);
+    padding: 0.5rem;
+}
+.todo-container .mark-imp #check {
+    scale: 1.3;
+}
+.todo-container .mark-imp label {
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%;
+}
+
 .todo-container .AddTask form button {
     padding: 0.6rem;
     border: none;
@@ -212,7 +231,7 @@ nav {
 .todo-container .AddTask form button:active {
     scale: 0.98;
 }
-/* allTask page styles */
+/* allTask STYLES */
 .todo-container .allTask {
     padding: 1.5rem;
     overflow: auto;
@@ -246,16 +265,35 @@ nav {
     transform: scale(0.99);
 }
 
-.todo-container .eachTask {
+.allTask .eachTask {
     margin-top: 1rem;
+    position: relative;
 }
 
-.todo-container .eachTask h3 {
+.allTask .eachTask h3 {
     color: var(--secondary);
     font-size: 1.2rem;
 }
 
-.todo-container .eachTask button {
+.allTask .eachTask span {
+    position: absolute;
+    top: 0.2rem;
+    left: 7rem;
+    color: var(--tertiary1);
+    font-size: 1rem;
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.2rem;
+    background-color: #2a2a2a;
+    text-align: center;
+}
+.allTask .eachTask span.true {
+    opacity: 1;
+}
+.allTask .eachTask span.false {
+    opacity: 0;
+}
+
+.allTask .eachTask button {
     padding: 0.5rem 0.6rem;
     min-width: fit-content;
     border: none;
@@ -267,10 +305,10 @@ nav {
     transition: all 0.4s ease;
     box-shadow: 1px 2px 7px var(--secondary);
 }
-.todo-container .eachTask button:hover {
+.allTask .eachTask button:hover {
     box-shadow: 1px 2px 7px var(--primary);
 }
-.todo-container .eachTask button:active {
+.allTask .eachTask button:active {
     scale: 0.99;
     box-shadow: 1px 2px 7px var(--secondary);
 }

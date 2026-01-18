@@ -44,28 +44,23 @@
             <button class="backBtn" id="0">Close</button>
 
             <div class="todo-container">
+                
                 <div class="AddTask">
-                    <form>
+                    <form onsubmit="sumbitHandeler(event)">
                         <h3>Add Task</h3>
                         <input type="text" id="taskInput" placeholder="Enter your task here">
-                        <textarea placeholder="Enter details" name="" id="" cols="30" rows="10"></textarea>
+                        <textarea placeholder="Enter details" name="" id="details" cols="30" rows="9"></textarea>
+                        
+                        <div class="mark-imp">
+                            <input type="checkbox" name="" id="check">
+                            <label for="check">Mark as important</label>
+                        </div>
+
                         <button type="submit" id="addTaskBtn">Add Task</button>
                     </form>
                 </div>
 
                 <div class="allTask">
-                    <h3>Your Task Lists</h3>
-                    
-                    <div class="eachTask">
-                        <h3>Your First Task</h3>
-                        <button>Mark as Complete</button>
-                    </div>
-                    
-                    <div class="eachTask">
-                        <h3>Your First Task</h3>
-                        <button>Mark as Complete</button>
-                    </div>
-
                 </div>
             </div>
         </div>
@@ -89,7 +84,7 @@
             <h1>Daily Goals</h1>
             <button class="backBtn" id="4">Close</button>
         </div>
-        
+
     </main>
 
     <script src="script.js"></script>
