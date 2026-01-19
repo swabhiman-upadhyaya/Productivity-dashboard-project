@@ -1,6 +1,4 @@
-let elems = document.querySelectorAll(".elem")
-let fullElem = document.querySelectorAll(".fullElem")
-let closeBtn = document.querySelectorAll(".backBtn")
+
 
 let taskInput = document.querySelector(".AddTask #taskInput");
 let taskDetailsInput = document.querySelector(".AddTask form #details");
@@ -8,20 +6,29 @@ let taskCheckBox = document.querySelector(".AddTask form #check");
 
 let allTask = document.querySelector('.todo-container .allTask')
 
+let elems = document.querySelectorAll(".elem")
+let fullElem = document.querySelectorAll(".fullElem")
+let closeBtn = document.querySelectorAll(".backBtn")
+let allElems = document.querySelector(".allElems")
 
-elems.forEach(function (eachElem) {
+function openFeatures() {
+    elems.forEach(function (eachElem) {
 
-    eachElem.addEventListener("click", function () {
-        fullElem[eachElem.id].style.display = "block";
+        eachElem.addEventListener("click", function () {
+            fullElem[eachElem.id].style.display = "block";
+            allElems.style.display = "none";
+        })
     })
-})
 
-closeBtn.forEach(function (eachBtn) {
+    closeBtn.forEach(function (eachBtn) {
 
-    eachBtn.addEventListener("click", () => {
-        fullElem[eachBtn.id].style.display = "none"
+        eachBtn.addEventListener("click", () => {
+            fullElem[eachBtn.id].style.display = "none";
+            allElems.style.display = "flex";
+        })
     })
-})
+}
+openFeatures();
 
 // =============================
 // To-do List Functionality.....
@@ -55,8 +62,8 @@ function renderTask() {
 
 
     let markAsCompBtns = document.querySelectorAll('.allTask button')
-    markAsCompBtns.forEach(function(elem) {
-        elem.addEventListener("click", function() {
+    markAsCompBtns.forEach(function (elem) {
+        elem.addEventListener("click", function () {
             currentTask.splice(elem.id, 1)
             localStorage.setItem("currentTask", JSON.stringify(currentTask))
             renderTask()
@@ -100,4 +107,5 @@ let sumbitHandeler = (event) => {
     renderTask()
 }
 
+// ------------------------------------------------------------------------------------------------
 
