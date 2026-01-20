@@ -134,7 +134,7 @@ nav {
     height: 98vh;
 }
 
-.toDo-full-Page h1 {
+.fullElem h1 {
     font-weight: 50;
     color: var(--tertiary1);
     margin-left: 0.5rem;
@@ -330,45 +330,63 @@ nav {
     box-shadow: 1px 2px 7px var(--secondary);
 }
 
-
-
-
-
 @media (max-width: 750px) {
+
+    .fullElem .backBtn {
+        top: 0.8rem;
+        right: 0.8rem;
+        padding: 0.2rem 0.6rem;
+        font-size: 1.2rem;
+    }
+
+    .fullElem h1 {
+        margin-top: 1.3rem;
+    }
+
+    /* =============================
+        "toDo full page" Media Query
+    ================================ */
 
     .toDo-full-Page {
         height: auto;
     }
+
     .toDo-full-Page h1 {
         font-size: 1.8rem;
-        margin-top: 0.5rem;
     }
+
     .toDo-full-Page .todo-container {
         flex-direction: column;
         gap: 1.5rem;
     }
+
     .todo-container .AddTask {
         width: 100%;
         height: auto;
     }
+
     .todo-container .allTask {
         overflow: auto;
         width: 100%;
         height: 65vh;
     }
+
     .todo-container .AddTask form h3 {
         font-size: 1.5rem;
         transform: none;
     }
+
     .todo-container .AddTask form input,
     .todo-container .AddTask form textarea {
         font-size: 1rem;
     }
+
     .allTask .eachTask {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.6rem;
     }
+
     .allTask .eachTask span {
         position: static;
     }
@@ -376,22 +394,84 @@ nav {
 
 }
 
-/* @media (max-width: ) */
-
 @media (min-width: 820px) {
-    
+
+    /* =============================
+        "toDo full page" Media Query
+    ================================ */
     section.allElems {
         height: 100%;
     }
+
+
 }
 
 @media (min-width: 750px) {
-    
+
+    /* =============================
+        "toDo full page" Media Query
+    ================================ */
     .toDo-full-Page {
         height: 100%;
     }
 
-    .todo-container .allTask {
-        
-    }    
+    /* =============================
+        "dailyPlanner page" Media Query
+    ================================ */
+}
+
+@media (max-width: 870px) {
+    .dailyPlanner-features input {
+        /* width: fit-content; */
+    }
+}
+
+/* ==============================
+    "dailyPlanner Full Page" styles
+================================= */
+
+.dailyPlanner-full-Page .dailyPlanner-container {
+    background-color: var(--secondary);
+    height: 87%;
+    margin: 0.8rem 0.6rem;
+    border-radius: 0.3rem;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    justify-content: space-evenly;
+}
+
+.dailyPlanner-features {
+    position: relative;
+}
+
+.dailyPlanner-features input {
+    background-color: var(--tertiary1);
+    margin-bottom: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 0.15rem;
+    padding: 1.2rem 0.8rem;
+    font-size: 1.1rem;
+    min-width: 40vw;
+    color: var(--neutral);
+    opacity: 1;
+    box-shadow: 2px 2px 5px var(--primary);
+
+    transition: all 0.4s ease;
+}
+
+.dailyPlanner-features input:hover {
+    box-shadow: 1px 2px 5px var(--tertiary1);
+}
+
+.dailyPlanner-features p {
+    position: absolute;
+    font-size: 0.8rem;
+    font-weight: bold;
+    left: 0.4rem;
+    top: 0.1rem;
+    opacity: 1;
+    color: var(--neutral);
 }
