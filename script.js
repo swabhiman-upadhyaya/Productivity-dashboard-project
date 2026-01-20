@@ -1,15 +1,17 @@
-
-
-let taskInput = document.querySelector(".AddTask #taskInput");
-let taskDetailsInput = document.querySelector(".AddTask form #details");
-let taskCheckBox = document.querySelector(".AddTask form #check");
-
-let allTask = document.querySelector('.todo-container .allTask')
-
+// ALL-ELEMS SELECTOR.......
 let elems = document.querySelectorAll(".elem")
 let fullElem = document.querySelectorAll(".fullElem")
 let closeBtn = document.querySelectorAll(".backBtn")
 let allElems = document.querySelector(".allElems")
+
+// TO-DO SELECTOR.......
+let taskInput = document.querySelector(".AddTask #taskInput");
+let taskDetailsInput = document.querySelector(".AddTask form #details");
+let taskCheckBox = document.querySelector(".AddTask form #check");
+let allTask = document.querySelector('.todo-container .allTask')
+
+// DAILY-PLANNER SELECTOR.......
+let dailyPlannerContainer = document.querySelector(".dailyPlanner-container");
 
 function openFeatures() {
     elems.forEach(function (eachElem) {
@@ -107,6 +109,40 @@ let sumbitHandeler = (event) => {
     renderTask()
 }
 
-// ------------------------------------------------------------------------------------------------
+
+// =============================================================
+// DAILY-PLANNER PAGE...........
+// =============================================================
+function DailyPlanner() {
+    dayPlanData = JSON.parse(localStorage.getItem("dayPlanData")) || {}
+
+    let hours = Array.from({ length: 18 }, (elem, idx) => `${6 + idx}:00 - ${7 + idx}:00`)
+    let wholeDaySum = '';
+    hours.forEach(function (elem, idx) {
+
+        let savedData = dayPlanData[idx] || '                      ';
+
+        wholeDaySum = wholeDaySum +
+            `<div class="dailyPlanner-features">
+                    <p>${elem}</p>
+                    <input type="text" name="" id=${idx} placeholder="Set your daily routine here" value=${savedData}>
+                </div>`
+    })
+    dailyPlannerContainer.innerHTML = wholeDaySum
 
 
+
+    // DAILY-PLANNER INPUT SELECTOR.......
+
+    let dailyPlannerInput = document.querySelectorAll(".dailyPlanner-features input")
+
+
+    dailyPlannerInput.forEach(function (elem) {
+        elem.addEventListener("input", function () {
+            dayPlanData[elem.id] = elem.value;
+
+            localStorage.setItem('dayPlanData', JSON.stringify(dayPlanData))
+        })
+    })
+}
+DailyPlanner();
