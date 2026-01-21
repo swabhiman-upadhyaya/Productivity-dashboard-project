@@ -330,6 +330,127 @@ nav {
     box-shadow: 1px 2px 7px var(--secondary);
 }
 
+
+/* ================================
+    "dailyPlanner Full Page" styles
+=================================== */
+
+.dailyPlanner-full-Page .dailyPlanner-container {
+    background-color: var(--secondary);
+    height: 87%;
+    margin: 0.8rem 0.6rem;
+    border-radius: 0.3rem;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    justify-content: space-evenly;
+}
+
+.dailyPlanner-features {
+    position: relative;
+}
+
+.dailyPlanner-features input {
+    background-color: var(--tertiary1);
+    margin-bottom: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 0.15rem;
+    padding: 1.2rem 0.8rem;
+    font-size: 1.1rem;
+    min-width: 40vw;
+    color: var(--neutral);
+    opacity: 1;
+    box-shadow: 2px 2px 5px var(--primary);
+
+    transition: all 0.4s ease;
+}
+
+.dailyPlanner-features input:hover {
+    box-shadow: 1px 2px 5px var(--tertiary1);
+}
+
+.dailyPlanner-features p {
+    position: absolute;
+    font-size: 0.8rem;
+    font-weight: bold;
+    left: 0.4rem;
+    top: 0.1rem;
+    opacity: 1;
+    color: var(--neutral);
+}
+
+/* ================================
+    "Motivational Full Page" styles
+=================================== */
+
+.motivation-full-Page {
+    background-color: var(--secondary);
+}
+.motivation-full-Page h1 {
+    color: var(--tertiary1);
+    text-shadow: 4px 4px 5px var(--primary);
+}
+
+.motivation-full-Page .bottom-motivational-page {
+    display: flex;
+    height: 70vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-motivational-page .motivational-page-wrapper {
+    background: conic-gradient(var(--tertiary1), var(--secondary));
+    padding: 1rem;
+    width: 50rem;
+    border-radius: 0.8rem;
+    box-shadow: 4px 4px 10px var(--primary);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+
+    color: whitesmoke;
+    transition: all 0.45s ease;
+}
+.bottom-motivational-page .motivational-page-wrapper:hover {
+    box-shadow: 6px 6px 14px var(--primary);
+    scale: 1.01;
+}
+
+.motivational-page-wrapper h2 {
+    text-align: center;
+    color: var(--primary);
+    text-shadow: 4px 2px 7px var(--primary);
+    font-size: 1.8rem;
+}
+
+.motivational-page-wrapper p {
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.4rem;
+    align-self: center;
+
+    color: var(--neutral);
+}
+
+.motivational-page-wrapper p span {
+    font-size: 1.7rem;
+}
+
+.motivational-page-wrapper h3 {
+    align-self: flex-end;
+    margin-top: 0.5rem;
+    border-radius: 0.2rem;
+    font-weight: bold;
+    color: var(--primary);
+    font-size: 1.7rem;
+}
+
+
 @media (max-width: 750px) {
 
     .fullElem .backBtn {
@@ -414,65 +535,10 @@ nav {
     .toDo-full-Page {
         height: 100%;
     }
-
-    /* =============================
-        "dailyPlanner page" Media Query
-    ================================ */
 }
-
-@media (max-width: 870px) {
-    .dailyPlanner-features input {
-        /* width: fit-content; */
-    }
+ 
+@media (min-width: 1020px) {
+    /* .bottom-motivational-page .motivational-page-wrapper {
+        width: 300px;
+    } */
 }
-
-/* ==============================
-    "dailyPlanner Full Page" styles
-================================= */
-
-.dailyPlanner-full-Page .dailyPlanner-container {
-    background-color: var(--secondary);
-    height: 87%;
-    margin: 0.8rem 0.6rem;
-    border-radius: 0.3rem;
-    padding: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    overflow: auto;
-    justify-content: space-evenly;
-}
-
-.dailyPlanner-features {
-    position: relative;
-}
-
-.dailyPlanner-features input {
-    background-color: var(--tertiary1);
-    margin-bottom: 1rem;
-    outline: none;
-    border: none;
-    border-radius: 0.15rem;
-    padding: 1.2rem 0.8rem;
-    font-size: 1.1rem;
-    min-width: 40vw;
-    color: var(--neutral);
-    opacity: 1;
-    box-shadow: 2px 2px 5px var(--primary);
-
-    transition: all 0.4s ease;
-}
-
-.dailyPlanner-features input:hover {
-    box-shadow: 1px 2px 5px var(--tertiary1);
-}
-
-.dailyPlanner-features p {
-    position: absolute;
-    font-size: 0.8rem;
-    font-weight: bold;
-    left: 0.4rem;
-    top: 0.1rem;
-    opacity: 1;
-    color: var(--neutral);
-}
-
