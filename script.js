@@ -13,6 +13,9 @@ let allTask = document.querySelector('.todo-container .allTask')
 // DAILY-PLANNER SELECTOR.......
 let dailyPlannerContainer = document.querySelector(".dailyPlanner-container");
 
+let motivationalQuote = document.querySelector(".motivational-page-wrapper p")
+let motivationalQuoteAuthor = document.querySelector(".motivational-page-wrapper h3")
+
 function openFeatures() {
     elems.forEach(function (eachElem) {
 
@@ -147,3 +150,11 @@ function DailyPlanner() {
 }
 DailyPlanner();
 
+async function fetchingQuotes() {
+    let response = await fetch("https://api.allorigins.win/raw?url=https://zenquotes.io/api/random")
+    let data = await response.json();
+
+    motivationalQuote.textContent = data[0].q
+    motivationalQuoteAuthor.textContent = data[0].a
+}
+fetchingQuotes()
