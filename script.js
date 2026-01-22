@@ -16,6 +16,12 @@ let dailyPlannerContainer = document.querySelector(".dailyPlanner-container");
 let motivationalQuote = document.querySelector(".motivational-page-wrapper p")
 let motivationalQuoteAuthor = document.querySelector(".motivational-page-wrapper h3")
 
+// POMODORO TIMER SELECTOR.......
+let h1Timer = document.querySelector(".times-wrapper .timer h1")
+let startbtn = document.querySelector(".times-wrapper .timer-buttons .start")
+let pausebtn = document.querySelector(".times-wrapper .timer-buttons .pause")
+let resetbtn = document.querySelector(".times-wrapper .timer-buttons .reset")
+
 function openFeatures() {
     elems.forEach(function (eachElem) {
 
@@ -158,3 +164,91 @@ async function fetchingQuotes() {
     motivationalQuoteAuthor.textContent = data[0].a
 }
 fetchingQuotes()
+
+
+function stopWatch() {
+    let startTime = 0;
+    let elapsedTime = 0;
+    let timerId = null;
+    let isRunning = false;
+
+    function formatTime(time) {
+        let sec = Math.floor(time / 1000) % 60;
+        let min = Math.floor(time / 60000) % 60;
+        let hr = Math.floor(time / 3600000);
+
+        return `${hr.toString().padStart(2, "0")}:` +
+            `${min.toString().padStart(2, "0")}:` +
+            `${sec.toString().padStart(2, "0")}`;
+    }
+
+    startbtn.addEventListener("click", () => {
+        if (isRunning) return;
+
+        isRunning = true;
+        startTime = Date.now() - elapsedTime;
+
+        timerId = setInterval(() => {
+            elapsedTime = Date.now() - startTime;
+            h1Timer.textContent = formatTime(elapsedTime);
+        }, 1000);
+    });
+
+    pausebtn.addEventListener("click", () => {
+        if (!isRunning) return;
+
+        isRunning = false;
+        clearInterval(timerId);
+    });
+
+    resetbtn.addEventListener("click", () => {
+        isRunning = false;
+        clearInterval(timerId);
+        elapsedTime = 0;
+        h1Timer.textContent = "00:00:00";
+    });
+}
+stopWatch()
+
+function dailyGoals() {
+    const goalInput = document.getElementById("goalInput");
+    const addGoalBtn = document.getElementById("addGoalBtn");
+    const goalsList = document.querySelector(".goals-list");
+
+    let goals = JSON.parse(localStorage.getItem("dailyGoals")) || [];
+
+    function renderGoals() {
+        goalsList.innerHTML = "";
+
+        goals.forEach((goal, index) => {
+            const li = document.createElement("li");
+
+            const text = document.createElement("span");
+            text.textContent = goal;
+
+            const btn = document.createElement("button");
+            btn.textContent = "✕";
+            btn.addEventListener("click", () => {
+                goals.splice(index, 1);
+                renderGoals();
+            });
+
+            li.append(text, btn);
+            goalsList.appendChild(li);
+        });
+
+        localStorage.setItem("dailyGoals", JSON.stringify(goals));
+    }
+
+    addGoalBtn.addEventListener("click", () => {
+        if (!goalInput.value.trim()) return;
+
+        goals.push(goalInput.value.trim());
+        goalInput.value = "";
+        renderGoals();
+    });
+
+    renderGoals();
+
+}
+dailyGoals();

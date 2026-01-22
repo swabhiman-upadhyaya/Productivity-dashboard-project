@@ -25,7 +25,6 @@ body {
     src: url(./fonts/fonnts.com-Aeonik-Regular.ttf);
 }
 
-
 main {
     height: 100%;
     width: 100%;
@@ -59,12 +58,10 @@ nav {
     cursor: pointer;
     box-shadow: 1px 1px 5px 2px var(--secondary);
 }
-
 .elem:hover {
     transform: scale(1.02);
     box-shadow: 2px 2px 5px 2px var(--tertiary1);
 }
-
 .elem:active {
     transform: scale(0.97);
 }
@@ -128,7 +125,11 @@ nav {
     scale: 0.95;
 }
 
-/* To-do Page Styles */
+/* ================================
+    " To-do full page" styles
+=================================== */
+
+/* Styles */
 
 .toDo-full-Page {
     height: 98vh;
@@ -143,7 +144,10 @@ nav {
     font-size: 2.5rem;
 }
 
-/* todo-container page styles */
+/* ================================
+    "toDo-container page" styles
+=================================== */
+
 .toDo-full-Page .todo-container {
     margin-top: 3rem;
     height: 80%;
@@ -234,7 +238,10 @@ nav {
     scale: 0.98;
 }
 
-/* "allTask" STYLES */
+/* ================================
+    "Alltask Full Page" styles
+=================================== */
+
 .todo-container .allTask {
     height: 100%;
     background-color: var(--tertiary1);
@@ -320,16 +327,13 @@ nav {
     transition: all 0.4s ease;
     box-shadow: 1px 2px 7px var(--secondary);
 }
-
 .allTask .eachTask button:hover {
     box-shadow: 1px 2px 7px var(--primary);
 }
-
 .allTask .eachTask button:active {
     scale: 0.99;
     box-shadow: 1px 2px 7px var(--secondary);
 }
-
 
 /* ================================
     "dailyPlanner Full Page" styles
@@ -478,7 +482,6 @@ nav {
     padding: 0.4rem;
 }
 
-
 .times-wrapper .timer-buttons {
     align-self: center;
     margin-left: 1.5rem;
@@ -517,6 +520,130 @@ nav {
 .timer-buttons .reset {
     margin-right: 1rem;
 }
+
+/* ================================
+    DAILY GOALS – STICKY NOTE
+================================ */
+
+.dailyGoals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.daily-goals-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+/* Sticky note */
+.sticky-note {
+    background: linear-gradient(
+        145deg,
+        var(--tertiary1),
+        var(--tertiary2)
+    );
+    width: 360px;
+    min-height: 420px;
+    padding: 1.2rem;
+    border-radius: 0.4rem;
+    box-shadow: 6px 6px 15px rgba(0,0,0,0.25);
+    transform: rotate(-1deg);
+    position: relative;
+    font-family: Aeonik;
+}
+
+/* pin */
+.sticky-note::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 18px;
+    background: var(--primary);
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+/* title */
+.sticky-note h2 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px var(--secondary);
+}
+
+/* list */
+.goals-list {
+    list-style: none;
+    max-height: 260px;
+    overflow-y: auto;
+    padding-right: 0.3rem;
+}
+
+.goals-list li {
+    background: var(--tertiary2);
+    padding: 0.45rem 0.6rem;
+    margin-bottom: 0.6rem;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    color: var(--neutral);
+    box-shadow: 2px 2px 6px var(--secondary);
+}
+
+/* delete btn */
+.goals-list button {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* input area */
+.goal-input {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 0.8rem;
+}
+
+.goal-input input {
+    flex: 1;
+    padding: 0.4rem;
+    border-radius: 0.25rem;
+    border: 2px solid var(--secondary);
+    outline: none;
+    font-family: Aeonik;
+    background-color: var(--tertiary2);
+    color: var(--neutral);
+}
+
+.goal-input button {
+    background: linear-gradient(
+        to right,
+        var(--secondary),
+        var(--primary)
+    );
+    color: var(--tertiary2);
+    border: none;
+    padding: 0.35rem 0.7rem;
+    font-size: 1.4rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 6px var(--primary);
+}
+.goal-input button:hover,
+.goals-list button:hover {
+    scale: 1.05;
+}
+
 
 @media (max-width: 750px) {
 
