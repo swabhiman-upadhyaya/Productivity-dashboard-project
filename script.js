@@ -22,12 +22,28 @@ let startbtn = document.querySelector(".times-wrapper .timer-buttons .start")
 let pausebtn = document.querySelector(".times-wrapper .timer-buttons .pause")
 let resetbtn = document.querySelector(".times-wrapper .timer-buttons .reset")
 
+
+// WEATHER & TIMER DASHBOARD SELECTOR.......
+let weatherDashboard = document.querySelector(".weather-fetching-dashboard")
+
+let dates = document.querySelector(".left .dates")
+let daysTimes = document.querySelector(".left .daysTimes")
+let place = document.querySelector(".left .Place")
+
+let temperature = document.querySelector(".right h3")
+let probability = document.querySelector(".right .probability")
+let precipitation = document.querySelector(".right .precipitation")
+let humidity = document.querySelector(".right .humidity")
+let wind = document.querySelector(".right .wind")
+
+
 function openFeatures() {
     elems.forEach(function (eachElem) {
 
         eachElem.addEventListener("click", function () {
             fullElem[eachElem.id].style.display = "block";
             allElems.style.display = "none";
+            weatherDashboard.style.display = "none"
         })
     })
 
@@ -36,6 +52,7 @@ function openFeatures() {
         eachBtn.addEventListener("click", () => {
             fullElem[eachBtn.id].style.display = "none";
             allElems.style.display = "flex";
+            weatherDashboard.style.display = "block"
         })
     })
 }
@@ -134,7 +151,7 @@ function DailyPlanner() {
         wholeDaySum = wholeDaySum +
             `<div class="dailyPlanner-features">
                     <p>${elem}</p>
-                    <input type="text" name="" id=${idx} placeholder="Set your daily routine here" value=${savedData}>
+                    <input type="text" name="" id=${idx} placeholder="One click and daily-routine set" value=${savedData}>
                 </div>`
     })
     dailyPlannerContainer.innerHTML = wholeDaySum
@@ -252,3 +269,60 @@ function dailyGoals() {
 
 }
 dailyGoals();
+
+
+function getTime() {
+
+    let allDaysArr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    let allMonthsArr = ["January", "February", "March", "April", "May", "June", "July", "August", "Semptember", "October", "November", "December"]
+
+    let date = new Date()
+
+    let today = date.getDay()
+    let todayDate = date.getDate()
+    let thisMonth = date.getMonth()
+    let thisYear = date.getFullYear()
+
+    let hours = date.getHours()
+
+    let minutes = date.getMinutes()
+    minutes = String(minutes).padStart(2, "0")
+
+    let seconds = date.getSeconds()
+    seconds = String(seconds).padStart(2, "0")
+
+    dates.innerHTML = `${todayDate}th ${allMonthsArr[thisMonth]}, ${thisYear}`
+
+    if (hours > 12) {
+        hours = hours - 12;
+        hours = String(hours).padStart(2, "0")
+        daysTimes.innerHTML = `${allDaysArr[today]}, ${hours}:${minutes}:${seconds}`
+    }
+    else {
+        hours = String(hours).padStart(2, "0")
+        daysTimes.innerHTML = `${allDaysArr[today]}, ${hours}:${minutes}:${seconds}`
+    }
+}
+
+let updateSeconds = setInterval(function () {
+    getTime();
+}, 1000)
+
+
+
+let apiKey = "5bc62630e88241d29b195239262301"
+let city = "Bhubaneswar"
+
+async function FetchingWeather() {
+    response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`)
+    data = await response.json()
+
+    console.log(data.current)
+    temperature.innerHTML = `${data.current.temp_c}°C`
+    probability.innerHTML = `Weather type: ${data.current.condition.text}`
+    precipitation.innerHTML = `Dew Ammout: ${data.current.dewpoint_c}°C`
+    humidity.innerHTML = `Humidity: ${data.current.humidity}`
+    wind.innerHTML = `Wind: ${data.current.wind_kph}km/hr`
+
+}
+FetchingWeather();
