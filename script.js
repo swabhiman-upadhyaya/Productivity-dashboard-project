@@ -303,21 +303,18 @@ function getTime() {
         daysTimes.innerHTML = `${allDaysArr[today]}, ${hours}:${minutes}:${seconds}`
     }
 }
-
 let updateSeconds = setInterval(function () {
     getTime();
 }, 1000)
-
 
 
 let apiKey = "5bc62630e88241d29b195239262301"
 let city = "Bhubaneswar"
 
 async function FetchingWeather() {
-    response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`)
+    response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`)
     data = await response.json()
 
-    console.log(data.current)
     temperature.innerHTML = `${data.current.temp_c}°C`
     probability.innerHTML = `Weather type: ${data.current.condition.text}`
     precipitation.innerHTML = `Dew Ammout: ${data.current.dewpoint_c}°C`
