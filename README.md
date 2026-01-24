@@ -1,5 +1,5 @@
 # 🚀 Productivity Dashboard
-### Live link 🔗: https://swabhiman-upadhyaya.github.io/Productivity-dashboard-project/  
+### Live link 🔗: productivity-dashboard-project.netlify.app 
 
 ## 📌 Project Description
 I have developed a **single-page web application** called **Productivity Dashboard** using **HTML, CSS, and Vanilla JavaScript**.  
