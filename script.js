@@ -326,3 +326,69 @@ async function FetchingWeather() {
 
 }
 FetchingWeather();
+
+
+
+
+
+let theme = document.querySelector("nav .theme");
+let rootElement = document.documentElement
+let flag = 0
+
+theme.addEventListener("click", function () {
+
+    if (flag == 0) {
+        rootElement.style.setProperty("--primary", "#850E35")
+        rootElement.style.setProperty("--secondary", "#EE6983")
+        rootElement.style.setProperty("--tertiary1", "#FFC4C4")
+        rootElement.style.setProperty("--tertiary2", "#FCF5EE")
+        rootElement.style.setProperty("--textColor", "#ff689a")
+        flag = 1
+    }
+
+    else if (flag == 1) {
+        rootElement.style.setProperty("--primary", "#30364F")
+        rootElement.style.setProperty("--secondary", "#ACBAC4")
+        rootElement.style.setProperty("--tertiary1", "#E1D9BC")
+        rootElement.style.setProperty("--tertiary2", "#F0F0DB")
+        rootElement.style.setProperty("--textColor", "#becfdb")
+        flag = 2
+    }
+
+    else if (flag == 2) {
+        rootElement.style.setProperty("--primary", "#213C51")
+        rootElement.style.setProperty("--secondary", "#DDAED3")
+        rootElement.style.setProperty("--tertiary1", "#6594B1")
+        rootElement.style.setProperty("--tertiary2", "#EEEEEE")
+        rootElement.style.setProperty("--textColor", "#b6cddd")
+        flag = 3
+    }
+
+    else if (flag == 3) {
+        rootElement.style.setProperty("--primary", "#0C2C55")
+        rootElement.style.setProperty("--secondary", "#296374")
+        rootElement.style.setProperty("--tertiary1", "#629FAD")
+        rootElement.style.setProperty("--tertiary2", "#EDEDCE")
+        rootElement.style.setProperty("--textColor", "#b6cddd")
+        flag = 4
+    }
+
+    else if (flag == 4) {
+        rootElement.style.setProperty("--primary", "#0F2854")
+        rootElement.style.setProperty("--secondary", "#1C4D8D")
+        rootElement.style.setProperty("--tertiary1", "#4988C4")
+        rootElement.style.setProperty("--tertiary2", "#BDE8F5")
+        rootElement.style.setProperty("--textColor", "#396aa9")
+        flag = 5
+    }
+
+    else if (flag == 5) {
+        rootElement.style.setProperty("--primary", "#850E35")
+        rootElement.style.setProperty("--secondary", "#EE6983")
+        rootElement.style.setProperty("--tertiary1", "#FFC4C4")
+        rootElement.style.setProperty("--tertiary2", "#FCF5EE")
+        rootElement.style.setProperty("--textColor", "#ff689a")
+        flag = 1
+    }
+
+})
