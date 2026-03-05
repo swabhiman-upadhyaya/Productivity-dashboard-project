@@ -1,5 +1,5 @@
 # 🚀 Productivity Dashboard
-### Live link 🔗: https://productivity-dashboard-projects.netlify.app/  
+### Live link 🔗: https://productivity-dashboard-project.vercel.app/
 
 ## 📌 Project Description
 I have developed a **single-page web application** called **Productivity Dashboard** using **HTML, CSS, and Vanilla JavaScript**.  
